@@ -1,0 +1,89 @@
+.image-container {
+    position: relative;
+}
+
+.background-image {
+    max-width: 100%;
+}
+
+.background-image,
+.anhnen {
+    position: absolute;
+    height: auto;
+}
+
+.anhnen {
+    z-index: 0;
+    width: 50%;
+    margin-top: 100px;
+    margin-left: 300px;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 20px;
+    z-index: 3;
+    border-radius: 10px;
+    margin-top: 120px;
+    margin-right: 165px;
+    border-style: ridge;
+}
+
+.header5 {
+    padding: 8px;
+}
+
+.tenmon {
+    background-color: rgb(246, 222, 190);
+    width: 300px;
+    border-radius: 10px 10px 0px 0px;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.tenmon h2 {
+    padding: 5px;
+    margin-left: 10px;
+}
+
+.gamezone {
+    width: 85%;
+    padding: 50px;
+    border-radius: 0px 10px 10px 10px;
+    background-color: antiquewhite;
+    margin-top: -20px;
+    margin-left: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.game-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 200px;
+    text-align: center;
+}
+
+.game-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.game-card h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.game-card p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.game-card:hover {
+    transform: scale(1.2);
+}

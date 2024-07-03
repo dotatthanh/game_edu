@@ -1,0 +1,335 @@
+/* Đặt lại CSS mặc định */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.main-content.closed {
+    margin-left: -250px;
+    /* Khi sidebar đóng, thụt vào bằng cách đặt margin-left về 0 */
+    transition: margin-left 0.3s ease-in-out;
+    /* Thêm transition để có hiệu ứng mượt */
+}
+
+
+/* Sidebar */
+
+.sidebar {
+    width: 250px;
+    background-color: #ffffff;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), -4px -4px 10px rgba(255, 255, 255, 0.7);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.sidebar.closed {
+    transform: translateX(-100%);
+}
+
+.sidebar .logo {
+    padding: 2px;
+    margin-bottom: 20px;
+    margin-top: -20px;
+    display: flex;
+    border-radius: 20px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), -4px -4px 10px rgba(255, 255, 255, 0.7);
+}
+
+.sidebar .logo img {
+    width: 25%;
+}
+
+.sidebar .logo h2 {
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+.sidebar .nav ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+}
+
+.sidebar .nav ul li {
+    width: 200px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), -4px -4px 10px rgba(255, 255, 255, 0.7);
+}
+
+.sidebar .nav ul li a {
+    display: block;
+    padding: 15px;
+    color: #0056b3;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+}
+
+.sidebar .nav ul li a:hover {
+    background-color: #f0f0f0;
+}
+
+
+/* Nội dung chính */
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    transition: margin-left 0.1s;
+}
+
+.header {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 24px;
+    color: #333;
+    margin-left: 20px;
+}
+
+.header #toggle-btn {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #2c3e50;
+    cursor: pointer;
+}
+
+
+/* Bảng game */
+
+.game-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.game-table thead {
+    background-color: #333;
+    color: #fff;
+}
+
+.game-table th,
+.game-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.game-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.game-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+
+/* CSS cho nút Sửa và Xóa trong bảng game */
+
+.game-table button {
+    background-color: #007bff;
+    /* Màu nền xanh dương */
+    color: #fff;
+    /* Màu chữ là trắng */
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    margin-right: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.game-table button:hover {
+    background-color: #0056b3;
+    /* Màu nền xanh dương sáng hơn khi hover */
+}
+
+.game-table button:active {
+    background-color: #004fa3;
+    /* Màu nền xanh dương sậm hơn khi click */
+}
+
+
+/* Bảng user */
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-table thead {
+    background-color: #333;
+    color: #fff;
+}
+
+.user-table th,
+.user-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.user-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.user-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.user-table .edit-button,
+.user-table .delete-button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.user-table .delete-button {
+    background-color: #dc3545;
+}
+
+* Content Sections */ .content-section {
+    display: none;
+}
+
+.content-section h2 {
+    margin-bottom: 20px;
+}
+
+.content-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-section form label {
+    margin: 10px 0 5px;
+}
+
+.content-section form input,
+.content-section form textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.content-section form textarea {
+    resize: vertical;
+}
+
+.content-section form input[type="file"] {
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    background-color: #f4f4f4;
+}
+
+.content-section form button {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 18px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.content-section form button:hover {
+    background-color: #219150;
+}
+
+
+/* Show Active Section */
+
+.content-section.active {
+    display: block;
+}
+
+
+/* Bảng tin tức  */
+
+.news-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.news-table thead {
+    background-color: #333;
+    color: #fff;
+}
+
+.news-table th,
+.news-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.news-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.news-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+
+/* CSS cho nút Sửa và Xóa trong bảng game */
+
+.news-table button {
+    background-color: #007bff;
+    /* Màu nền xanh dương */
+    color: #fff;
+    /* Màu chữ là trắng */
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    margin-right: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.news-table button:hover {
+    background-color: #0056b3;
+    /* Màu nền xanh dương sáng hơn khi hover */
+}
+
+.news-table button:active {
+    background-color: #004fa3;
+    /* Màu nền xanh dương sậm hơn khi click */
+}
