@@ -8,6 +8,7 @@ class Game extends Model
 {
     protected $fillable = [
         'type_id',
+        'class_id',
         'name',
         'image',
         'description',

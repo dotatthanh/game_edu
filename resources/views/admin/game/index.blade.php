@@ -53,6 +53,7 @@
                                     <th>Tên game</th>
                                     <th>Hình ảnh</th>
                                     <th>Mô tả</th>
+                                    <th>Lớp</th>
                                     <th>Thể loại</th>
                                     <th>Link</th>
                                     <th class="text-center">Hành động</th>
@@ -87,6 +88,7 @@
                                                 </div>
                                             </div>
                                         </td>
+                                        <td>{{ getConst('class')[$item->class_id] }}</td>
                                         <td>{{ $item->type->name }}</td>
                                         <td>{{ $item->link }}</td>
                                         <td class="text-center">

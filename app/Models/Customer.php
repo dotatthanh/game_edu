@@ -23,8 +23,8 @@ class Customer extends Authenticatable
         return $this->hasMany(Favorite::class);
     }
 
-    public function checkFavorite($movie_id)
+    public function checkFavorite($game_id)
     {
-        return $this->favorites()->where('movie_id', $movie_id)->exists();
+        return $this->favorites()->where('game_id', $game_id)->exists();
     }
 }

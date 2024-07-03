@@ -12,6 +12,19 @@
         </div>
 
         <div class="form-group mb-3">
+            <label for="class-id">Lớp <span class="text-danger">*</span></label>
+            <select class="form-control select2" name="class_id"  id="class-id">
+                <option value="">Chọn lớp</option>
+                @foreach (getConst('class') as $id => $className)
+                    <option value="{{ $id }}"
+                        {{ old('class_id', $data_edit->class_id ?? '') == $id ? 'selected' : '' }}>
+                        {{ $className }}</option>
+                @endforeach
+            </select>
+            {!! $errors->first('class_id', '<span class="error">:message</span>') !!}
+        </div>
+
+        <div class="form-group mb-3">
             <label for="type-id">Thể loại <span class="text-danger">*</span></label>
             <select class="form-control select2" name="type_id"  id="type-id">
                 <option value="">Chọn thể loại</option>

@@ -8,6 +8,11 @@ class Favorite extends Model
 {
     protected $fillable = [
         'customer_id',
-        'movie_id',
+        'game_id',
     ];
+
+    public function game()
+    {
+        return $this->belongsTo(Game::class);
+    }
 }

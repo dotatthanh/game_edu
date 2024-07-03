@@ -111,7 +111,8 @@ body {
     font-size: 17px;
     font-weight: bold;
     width: 170px;
-    height: 35px;
+    text-align: center;
+    text-decoration: none;
 }
 
 .left-section {
@@ -363,4 +364,22 @@ nav a:hover {
 
 .dropdown-content {
     margin-top: 30px;
+}
+
+.user-container {
+    display: flex;
+    align-items: center;
+}
+
+.user-icon img{
+    width: 32px;
+    height: auto;
+    margin-right: 10px;
+    margin-left: 100px;
+    cursor: pointer;
+}
+
+.user-container {
+    display: flex;
+    align-items: center;
 }

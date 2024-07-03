@@ -2,36 +2,87 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SaveProfileRequest;
+use App\Models\Favorite;
+use App\Models\Game;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+
 class IndexController extends Controller
 {
     public function index()
     {
-        dd(auth('web')->user());
-        return view('pages.index');
+        $games = Game::orderBy('id')->get();
+        $data = [
+            'games' => $games,
+        ];
+
+        return view('pages.index', $data);
     }
 
-    public function favorite()
+    /**
+     * Hàm post like và unlike game.
+     */
+    public function like(int $id)
     {
-        return view('pages.favorite');
+        $checkExists = Favorite::where([
+            'game_id' => $id,
+            'customer_id' => Auth::guard('web')->id(),
+        ])->exists();
+
+        if ($checkExists) {
+            Favorite::where([
+                'game_id' => $id,
+                'customer_id' => Auth::guard('web')->id(),
+            ])->delete();
+        } else {
+            Favorite::create([
+                'game_id' => $id,
+                'customer_id' => Auth::guard('web')->id(),
+            ]);
+        }
+
+        return redirect()->back();
     }
 
-    public function trending()
+    /**
+     * Trang danh sách game yêu thích.
+     */
+    public function favorites()
     {
-        return view('pages.trending');
+        $favorites = Favorite::where([
+            'customer_id' => Auth::guard('web')->id(),
+        ])->get();
+
+        $data = [
+            'data' => $favorites,
+            'categoryName' => 'Yêu thích',
+        ];
+
+        return view('pages.favorites', $data);
     }
 
-    public function comming()
+    /**
+     * Trang danh sách game yêu thích.
+     */
+    public function profile()
     {
-        return view('pages.comming');
+        $data = [
+            'user' => auth('web')->user(),
+        ];
+
+        return view('pages.profile', $data);
     }
 
-    public function movie()
+    /**
+     * post lưu thông tin khách hàng.
+     */
+    public function saveProfile(SaveProfileRequest $request)
     {
-        return view('pages.movie');
-    }
+        $data = $request->all();
+        $data['password'] = Hash::make($request->password);
+        auth('web')->user()->update($data);
 
-    public function watch()
-    {
-        return view('pages.watch');
+        return redirect()->back();
     }
 }

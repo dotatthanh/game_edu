@@ -11,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('games', function (Blueprint $table) {
+        Schema::create('favorites', function (Blueprint $table) {
             $table->id();
-            $table->integer('type_id');
-            $table->integer('class_id');
-            $table->string('name');
-            $table->string('image');
-            $table->text('description')->nullable();
-            $table->string('link');
+            $table->unsignedBigInteger('customer_id');
+            $table->unsignedBigInteger('game_id');
+            $table->primary(['customer_id', 'game_id']);
             $table->timestamps();
         });
     }
@@ -28,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('games');
+        Schema::dropIfExists('favorites');
     }
 };

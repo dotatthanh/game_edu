@@ -1,4 +1,11 @@
+
+
 document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('user-container').addEventListener('click', function() {
+        var dropdown = document.getElementById('userDropdown');
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    });
+    
     // Gọi API PHP để lấy dữ liệu từ bảng chi_tiet_game
     fetch('PHP/get_all_games.php')
         .then(response => response.json())
@@ -37,6 +44,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 document.addEventListener('DOMContentLoaded', function() {
+
+
+
     // Mở form quên mật khẩu khi click vào liên kết "Quên mật khẩu"
     document.querySelector(".forgot-password").addEventListener("click", function() {
         document.getElementById("forgotPasswordForm").style.display = "block";
@@ -66,9 +76,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Mở form đăng nhập
-    document.getElementById('loginBtn').addEventListener('click', function() {
-        document.getElementById('loginForm').style.display = 'block';
-    });
+    // document.getElementById('loginBtn').addEventListener('click', function() {
+    //     document.getElementById('loginForm').style.display = 'block';
+    // });
     // Đăng ký
     // document.querySelector("#registerForm .btn[type='submit']").addEventListener("click", function(event) {
     //     event.preventDefault(); // Ngăn chặn form submit mặc định
@@ -180,32 +190,32 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
-document.getElementById('loginForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+// document.getElementById('loginForm').addEventListener('submit', function(e) {
+//     e.preventDefault();
 
-    const username = document.getElementById('username').value;
-    const psw = document.getElementById('psw').value;
+//     const username = document.getElementById('username').value;
+//     const psw = document.getElementById('psw').value;
 
-    fetch('PHP/login.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: new URLSearchParams({
-                username: username,
-                psw: psw
-            })
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                window.location.href = data.redirect_url;
-            } else {
-                document.getElementById('message').textContent = data.message;
-            }
-        })
-        .catch(error => console.error('Error:', error));
-});
+//     fetch('PHP/login.php', {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/x-www-form-urlencoded',
+//             },
+//             body: new URLSearchParams({
+//                 username: username,
+//                 psw: psw
+//             })
+//         })
+//         .then(response => response.json())
+//         .then(data => {
+//             if (data.success) {
+//                 window.location.href = data.redirect_url;
+//             } else {
+//                 document.getElementById('message').textContent = data.message;
+//             }
+//         })
+//         .catch(error => console.error('Error:', error));
+// });
 
 
 

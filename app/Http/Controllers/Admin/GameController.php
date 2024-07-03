@@ -90,10 +90,7 @@ class GameController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function show(Game $game)
-    {
-
-    }
+    public function show(Game $game) {}
 
     /**
      * Show the form for editing the specified resource.

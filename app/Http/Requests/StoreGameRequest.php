@@ -26,6 +26,7 @@ class StoreGameRequest extends FormRequest
         return [
             'name' => 'required|max:255',
             'type_id' => 'required',
+            'class_id' => 'required',
             'link' => 'required|url|max:1080',
             'image' => 'required|image',
             'description' => 'required|max:1000',
@@ -38,6 +39,7 @@ class StoreGameRequest extends FormRequest
             'name.required' => 'Họ và tên là trường bắt buộc.',
             'name.max' => 'Họ và tên không được dài quá :max ký tự.',
             'type_id.required' => 'Thể loại là trường bắt buộc.',
+            'class_id.required' => 'Lớp là trường bắt buộc.',
             'image.required' => 'Hình ảnh là trường bắt buộc.',
             'image.image' => 'Hình ảnh phải là tệp tin dạng ảnh.',
             'link.required' => 'Link là trường bắt buộc.',

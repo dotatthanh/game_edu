@@ -3,7 +3,6 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
 class UpdateGameRequest extends FormRequest
 {
@@ -27,6 +26,7 @@ class UpdateGameRequest extends FormRequest
         return [
             'name' => 'required|max:255',
             'type_id' => 'required',
+            'class_id' => 'required',
             'link' => 'required|url|max:1080',
             'image' => 'nullable|image',
             'description' => 'required|max:1000',
@@ -39,6 +39,7 @@ class UpdateGameRequest extends FormRequest
             'name.required' => 'Họ và tên là trường bắt buộc.',
             'name.max' => 'Họ và tên không được dài quá :max ký tự.',
             'type_id.required' => 'Thể loại là trường bắt buộc.',
+            'class_id.required' => 'Lớp là trường bắt buộc.',
             'image.required' => 'Hình ảnh là trường bắt buộc.',
             'link.required' => 'Link là trường bắt buộc.',
             'link.url' => 'Link phải là một URL hợp lệ.',
