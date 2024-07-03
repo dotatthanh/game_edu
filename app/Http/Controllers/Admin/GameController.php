@@ -70,6 +70,7 @@ class GameController extends Controller
             Game::create([
                 'name' => $request->name,
                 'type_id' => $request->type_id,
+                'class_id' => $request->class_id,
                 'link' => $request->link,
                 'description' => $request->description,
                 'image' => $file_path,
@@ -122,6 +123,7 @@ class GameController extends Controller
                 'name' => $request->name,
                 'description' => $request->description,
                 'type_id' => $request->type_id,
+                'class_id' => $request->class_id,
                 'link' => $request->link,
             ];
 
