@@ -10,7 +10,7 @@
                     @foreach ($data as $favorite)
                     <div class="col-4 mb-3 text-center">
                         <a href="{{ $favorite->game->link }}">
-                            <img src="{{ asset($favorite->game->image) }}" alt="">
+                            <img src="{{ asset($favorite->game->image) }}" alt="" class="w-100">
                         </a>
 
                         <h3 class="mt-2"><a href="{{ $favorite->game->link }}">{{ $favorite->game->name }}</a></h3>

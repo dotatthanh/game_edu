@@ -10,7 +10,7 @@
                     @foreach ($games as $game)
                     <div class="col-4 mb-3 text-center">
                         <a href="{{ $game->link }}">
-                            <img src="{{ asset($game->image) }}" alt="">
+                            <img src="{{ asset($game->image) }}" alt="" class="w-100">
                         </a>
 
                         <h3 class="mt-2"><a href="{{ $game->link }}">{{ $game->name }}</a></h3>
