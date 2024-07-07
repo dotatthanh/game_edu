@@ -58,7 +58,6 @@
                     @endif
                     <div class="col-7 right">
                         @foreach ($newsStudy as $news)
-                        {{ $news->id }}
                             <div class="headline news">
                                 <h3 class="title">
                                     <a href="{{ route('web.news-detail', $news->id) }}">{{ $news->title }}</a>
