@@ -40,6 +40,7 @@
         <div class="gamezone">
             <div class="container">
                 <div class="row">
+                    @if ($newsStudyFirst)
                     <div class="col-5 left">
                         <div class="headline top-news">
                             <img class="w-100"
@@ -54,6 +55,7 @@
                             {!! $newsStudyFirst->summary !!}
                         </div>
                     </div>
+                    @endif
                     <div class="col-7 right">
                         @foreach ($newsStudy as $news)
                         {{ $news->id }}
