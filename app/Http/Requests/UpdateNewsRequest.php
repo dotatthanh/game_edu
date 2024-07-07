@@ -25,7 +25,7 @@ class UpdateNewsRequest extends FormRequest
     {
         return [
             'title' => 'required|max:255',
-            'content' => 'required|max:1000',
+            'content' => 'required',
             'summary' => 'required|max:1000',
             'image' => 'nullable|image',
             'type' => 'required',
