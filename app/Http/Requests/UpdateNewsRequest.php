@@ -28,6 +28,7 @@ class UpdateNewsRequest extends FormRequest
             'content' => 'required|max:1000',
             'summary' => 'required|max:1000',
             'image' => 'nullable|image',
+            'type' => 'required',
         ];
     }
 
@@ -41,6 +42,7 @@ class UpdateNewsRequest extends FormRequest
             'summary.required' => 'Tóm tắt là trường bắt buộc.',
             'summary.max' => 'Tóm tắt không được dài quá :max ký tự.',
             'image.image' => 'Hình ảnh phải là tệp tin dạng ảnh.',
+            'type.required' => 'Loại tin tức là trường bắt buộc.',
         ];
     }
 }

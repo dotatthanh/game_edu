@@ -39,6 +39,10 @@ Route::post('register', [AuthLoginController::class, 'postRegister'])->name('web
 Route::post('logout-web', [AuthLoginController::class, 'destroy'])->name('web.logout');
 
 Route::get('/', [IndexController::class, 'index'])->name('web.home');
+Route::get('/tim-kiem', [IndexController::class, 'search'])->name('web.search');
+Route::get('/tin-tuc', [IndexController::class, 'news'])->name('web.news');
+Route::get('/tin-tuc/{news}', [IndexController::class, 'newsDetail'])->name('web.news-detail');
+Route::get('/danh-muc', [IndexController::class, 'category'])->name('web.category');
 Route::post('/thich-game/{id}', [IndexController::class, 'like'])->name('web.game-like');
 Route::get('/yeu-thich', [IndexController::class, 'favorites'])->name('web.favorites');
 Route::get('/thong-tin-tai-khoan', [IndexController::class, 'profile'])->name('web.profile');

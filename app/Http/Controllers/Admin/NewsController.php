@@ -66,6 +66,7 @@ class NewsController extends Controller
                 'image' => $file_path_image,
                 'content' => $request->content,
                 'summary' => $request->summary,
+                'type' => $request->type,
             ]);
 
             DB::commit();
@@ -117,6 +118,7 @@ class NewsController extends Controller
                 'title' => $request->title,
                 'content' => $request->content,
                 'summary' => $request->summary,
+                'type' => $request->type,
             ];
 
             if ($request->file('image')) {

@@ -35,5 +35,5 @@
     </div>
 </div>
 
-<button type="submit" class="btn btn-primary mr-1 waves-effect waves-light">Lưu lại</button>
+<button type="submit" class="btn btn-primary mr-1 waves-effect waves-light">Lưu</button>
 <a href="{{ route('customers.index') }}" class="btn btn-secondary waves-effect">Quay lại</a>

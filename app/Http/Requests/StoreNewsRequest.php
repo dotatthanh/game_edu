@@ -28,6 +28,7 @@ class StoreNewsRequest extends FormRequest
             'content' => 'required|max:1000',
             'summary' => 'required|max:1000',
             'image' => 'required|image',
+            'type' => 'required',
         ];
     }
 
@@ -42,6 +43,7 @@ class StoreNewsRequest extends FormRequest
             'summary.max' => 'Tóm tắt không được dài quá :max ký tự.',
             'image.required' => 'Hình ảnh là trường bắt buộc.',
             'image.image' => 'Hình ảnh phải là tệp tin dạng ảnh.',
+            'type.required' => 'Loại tin tức là trường bắt buộc.',
         ];
     }
 }

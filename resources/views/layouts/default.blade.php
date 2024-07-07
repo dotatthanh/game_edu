@@ -21,13 +21,13 @@
     <div class="header">
         <div class="left-section">
             <nav>
-                <a href="introduce.html" target="_blank">
+                <a href="introduce.html">
                     <h4>Giới Thiệu</h4>
                 </a>
-                <a href="#guides" target="_blank">
+                <a href="#guides">
                     <h4>Hướng dẫn</h4>
                 </a>
-                <a href="index-news.html" target="_blank">
+                <a href="{{ route('web.news') }}">
                     <h4>Tin tức</h4>
                 </a>
                 <a href="mailto:mr.phamnhatthanh05112002@gmail.com" class="right-section3" target="_blank">
@@ -44,12 +44,12 @@
             </a>
         </div>
         <div class="right-section">
-            <div class="search">
-                <input type="text" placeholder="Tìm kiếm game...">
+            <form class="search" action="{{ route('web.search') }}" method="get">
+                <input type="text" name="search" placeholder="Tìm kiếm game...">
                 <button type="submit" class="searchButton">
                      <i class="fa fa-search"></i>
                   </button>
-            </div>
+            </form>
 
             @auth('web')
                 <div class="user-container" id="user-container">
@@ -67,61 +67,32 @@
         </div>
     </div>
     <div class="header2">
-
-        <a href="link-to-page1.html">
-            <img src="{{ asset('pages/Photo/ngoisaolop1.png') }}" alt="Mô tả hình ảnh" class="starimage">
+        <a href="{{ route('web.category', ['class_id' => '1']) }}">
+            <img src="{{ asset('pages/Photo/ngoisaolop1.png') }}" alt="Lớp 1" class="starimage">
         </a>
-        <a href="link-to-page2.html">
-            <img src="{{ asset('pages/Photo/ngoisaolop2.png') }}" alt="Mô tả hình ảnh" class="starimage">
+        <a href="{{ route('web.category', ['class_id' => '2']) }}">
+            <img src="{{ asset('pages/Photo/ngoisaolop2.png') }}" alt="Lớp 2" class="starimage">
         </a>
-        <a href="link-to-page3.html">
-            <img src="{{ asset('pages/Photo/ngoisaolop3.png') }}" alt="Mô tả hình ảnh" class="starimage">
+        <a href="{{ route('web.category', ['class_id' => '3']) }}">
+            <img src="{{ asset('pages/Photo/ngoisaolop3.png') }}" alt="Lớp 3" class="starimage">
         </a>
-        <a href="link-to-page4.html">
-            <img src="{{ asset('pages/Photo/ngoisaolop4.png') }}" alt="Mô tả hình ảnh" class="starimage">
+        <a href="{{ route('web.category', ['class_id' => '4']) }}">
+            <img src="{{ asset('pages/Photo/ngoisaolop4.png') }}" alt="Lớp 4" class="starimage">
         </a>
-        <a href="link-to-page5.html">
-            <img src="{{ asset('pages/Photo/ngoisaolop5.png') }}" alt="Mô tả hình ảnh" class="starimage">
+        <a href="{{ route('web.category', ['class_id' => '5']) }}">
+            <img src="{{ asset('pages/Photo/ngoisaolop5.png') }}" alt="Lớp 5" class="starimage">
         </a>
-
     </div>
+
     <div class="header3">
+        @foreach ($types as $type)
         <div class="subject-container">
-            <a href="#">
-                <img src="{{ asset('pages/Photo/toan.png') }}" alt="Mô tả hình ảnh">
-                <h4>Toán</h4>
+            <a href="{{ route('web.category', ['type_id' => $type->id]) }}">
+                <img src="{{ asset($type->image) }}" alt="{{ $type->name }}">
+                <h4>{{ $type->name }}</h4>
             </a>
         </div>
-        <div class="subject-container">
-            <a href="#">
-                <img src="{{ asset('pages/Photo/vietanh.png') }}" alt="Mô tả hình ảnh">
-                <h4>Tiếng Việt</h4>
-            </a>
-        </div>
-        <div class="subject-container">
-            <a href="#">
-                <img src="{{ asset('pages/Photo/vietanh.png') }}" alt="Mô tả hình ảnh">
-                <h4>Tiếng Anh</h4>
-            </a>
-        </div>
-        <div class="subject-container">
-            <a href="#">
-                <img src="{{ asset('pages/Photo/tunhien.png') }}" alt="Mô tả hình ảnh">
-                <h4>Tự Nhiên & Xã hội</h4>
-            </a>
-        </div>
-        <div class="subject-container">
-            <a href="#">
-                <img src="{{ asset('pages/Photo/lichsu.png') }}" alt="Mô tả hình ảnh">
-                <h4>Lịch Sử</h4>
-            </a>
-        </div>
-        <div class="subject-container">
-            <a href="#">
-                <img src="{{ asset('pages/Photo/dialy.png') }}" alt="Mô tả hình ảnh">
-                <h4>Địa Lý</h4>
-            </a>
-        </div>
+        @endforeach
     </div>
 
     <div class="user-menu">

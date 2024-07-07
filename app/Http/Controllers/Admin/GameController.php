@@ -21,7 +21,7 @@ class GameController extends Controller
      */
     public function index(Request $request)
     {
-        $games = Game::query();
+        $games = Game::orderBy('id', 'desc');
 
         if ($request->search) {
             $games = Game::where('name', 'like', '%'.$request->search.'%');

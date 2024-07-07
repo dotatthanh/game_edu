@@ -15,6 +15,19 @@
 </div>
 
 <div class="row mb-3">
+    <div class="form-group mb-3">
+        <label for="class-id">Loại tin tức <span class="text-danger">*</span></label>
+        <select class="form-control select2" name="type"  id="class-id">
+            <option value="">Chọn loại tin tức</option>
+            @foreach (getConst('news_type') as $id => $type)
+                <option value="{{ $id }}"
+                    {{ old('type', $data_edit->type ?? '') == $id ? 'selected' : '' }}>
+                    {{ $type }}</option>
+            @endforeach
+        </select>
+        {!! $errors->first('type', '<span class="error">:message</span>') !!}
+    </div>
+
     <div class="col-sm-6">
         <div class="form-group">
             <label for="image">Hình ảnh @if($routeType == 'create') <span class="error">*</span>@endif</label>
@@ -37,6 +50,6 @@
 </div>
 
 <div class="mt-3">
-    <button type="submit" class="btn btn-primary mr-1 waves-effect waves-light">Save</button>
-    <a href="{{ route('news.index') }}" class="btn btn-secondary waves-effect">Back</a>
+    <button type="submit" class="btn btn-primary mr-1 waves-effect waves-light">Lưu</button>
+    <a href="{{ route('news.index') }}" class="btn btn-secondary waves-effect">Quay lại</a>
 </div>

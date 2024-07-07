@@ -8,4 +8,8 @@ return [
         4 => 'Lớp 4',
         5 => 'Lớp 5',
     ],
+    'news_type' => [
+        1 => 'Tin tức',
+        2 => 'Góc học tập',
+    ],
 ];

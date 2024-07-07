@@ -51,6 +51,7 @@
                                 <tr>
                                     <th style="width: 70px;">STT</th>
                                     <th>Tiêu đề</th>
+                                    <th>Loại tin tức</th>
                                     <th>Hình ảnh</th>
                                     <th>Tóm tắt</th>
                                     <th>Nội dung</th>
@@ -63,6 +64,7 @@
                                     <tr>
                                         <td>{{ $stt++ }}</td>
                                         <td>{{ $item->title }}</td>
+                                        <td>{{ getConst('news_type')[$item->type] }}</td>
                                         <td>
                                             <img src="{{ asset($item->image) }}" alt="" style="max-width: 200px;">
                                         </td>
