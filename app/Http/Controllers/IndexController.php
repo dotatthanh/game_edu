@@ -151,7 +151,10 @@ class IndexController extends Controller
             $games = Game::where('class_id', $request->class_id);
             $categoryName = getConst('class')[$request->class_id];
         }
-        $games = $games->paginate(8)->appends(['search' => $request->search]);
+        $games = $games->paginate(8)->appends([
+            'type_id' => $request->type_id,
+            'class_id' => $request->class_id
+        ]);
 
         $data = [
             'games' => $games,
