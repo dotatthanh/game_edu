@@ -46,8 +46,8 @@
                                     </div>
                                 </div>
 
-                                {{ $games->links() }}
                                 @endforeach
+                                {{ $games->links() }}
                             @endif
                         </div>
                     </div>
