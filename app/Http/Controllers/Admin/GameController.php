@@ -156,6 +156,7 @@ class GameController extends Controller
         try {
             DB::beginTransaction();
 
+            $game->favorites()->delete();
             $game->destroy($game->id);
 
             DB::commit();

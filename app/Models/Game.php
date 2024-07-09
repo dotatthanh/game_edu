@@ -19,4 +19,9 @@ class Game extends Model
     {
         return $this->belongsTo(Type::class);
     }
+
+    public function favorites()
+    {
+        return $this->hasMany(Favorite::class);
+    }
 }
