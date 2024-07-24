@@ -16,7 +16,7 @@
                         </div>
 
                         <div class="col-9 mb-3">
-                            <h4><a href="">{{ $post->title }}</a></h4>
+                            <h4><a href="{{ route('web.news-detail', $post->id) }}">{{ $post->title }}</a></h4>
                             <div>{{ $post->created_at }}</div>
                             <div>{!! $post->summary !!}</div>
                         </div>
