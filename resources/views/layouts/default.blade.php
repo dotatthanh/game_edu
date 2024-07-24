@@ -21,17 +21,13 @@
     <div class="header">
         <div class="left-section">
             <nav>
-                <a href="introduce.html">
-                    <h4>Giới Thiệu</h4>
-                </a>
-                <a href="#guides">
-                    <h4>Hướng dẫn</h4>
+
                 </a>
                 <a href="{{ route('web.news') }}">
                     <h4>Tin tức</h4>
                 </a>
                 <a href="mailto:mr.phamnhatthanh05112002@gmail.com" class="right-section3" target="_blank">
-                    <h4>Gmail: mr.phamnhatthanh05112002@gmail.com</h4>
+                    <h4>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Gmail: mr.phamnhatthanh05112002@gmail.com</h4>
                 </a>
             </nav>
 
